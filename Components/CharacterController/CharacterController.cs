@@ -2,7 +2,7 @@ using Godot;
 
 public partial class CharacterController : Node
 {
-    private StateMachine<CharacterMoveState> _stateMachine;
+    private StateMachine<ICharacterMoveStateMachine> _stateMachine;
 
 
     public override void _Ready()
