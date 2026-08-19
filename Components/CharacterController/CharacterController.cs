@@ -8,7 +8,7 @@ public partial class CharacterController : Node {
         if (_body is null) {
             _body = GetParent<CharacterBody3D>();
         }
-
+        _stateMachine = new StateMachine<ICharacterMoveStateMachine>();
         _stateMachine.Initialize([
             new CharacterStateIdle(this, _body)
         ]);
