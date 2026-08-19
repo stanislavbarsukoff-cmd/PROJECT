@@ -6,13 +6,3 @@ project.godot.converted.*
 *.uid
 *.log
 godot.log
-.mono/
-data_*/
-mono_crash.*
-*.suo
-*.pdb
-*.obj
-bin/
-obj/
-.DS_Store
-Thumbs.db
