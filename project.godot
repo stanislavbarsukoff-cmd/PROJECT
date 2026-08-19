@@ -22,6 +22,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="PROJECT"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/GitSync/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
