@@ -1,4 +1,4 @@
-public static class TypeIdRegistry<T>
+public static class TypeIdRegistry<ITag>
 {
     private int _count;
     public int Count = Volatile.Read(_count);
