@@ -11,4 +11,3 @@ public abstract class State<TMarker, TEntity> : State
 {
     public override int Id => TypeIdRegistry<TMarker>.For<TEntity>.Id;
 }
-
