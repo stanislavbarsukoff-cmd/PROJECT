@@ -1,9 +1,9 @@
-public static class TypeIdRegistry<ITag>
+public static class TypeIdRegistry<TTag>
 {
-    private int _count;
-    public int Count = Volatile.Read(_count);
-    public static class For<IEntity>
+    private static int _count;
+    public static int Count = Volatile.Read(_count);
+    public static class For<TEntity>
     {
-        public int Id { get; } = Interlocked.Increment(_count);
+        public static int Id { get; } = Interlocked.Increment(_count);
     }
 }
