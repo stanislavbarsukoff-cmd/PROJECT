@@ -1,3 +1,20 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+export_presets.cfg
+project.godot.converted.*
+*.uid
+*.log
+godot.log
+.mono/
+data_*/
+mono_crash.*
+*.csproj
+*.sln
+*.suo
+*.pdb
+*.obj
+bin/
+obj/
+.DS_Store
+Thumbs.db
