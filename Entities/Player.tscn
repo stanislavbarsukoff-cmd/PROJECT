@@ -16,5 +16,6 @@ shape = SubResource("CapsuleShape3D_eim23")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=766089546]
 mesh = SubResource("CapsuleMesh_eim23")
 
-[node name="CharacterController" type="Node" parent="." unique_id=1945813550]
+[node name="CharacterController" type="Node" parent="." unique_id=1945813550 node_paths=PackedStringArray("_body")]
 script = ExtResource("1_41wu2")
+_body = NodePath("..")
