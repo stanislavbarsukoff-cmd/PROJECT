@@ -9,8 +9,6 @@ godot.log
 .mono/
 data_*/
 mono_crash.*
-*.csproj
-*.sln
 *.suo
 *.pdb
 *.obj
