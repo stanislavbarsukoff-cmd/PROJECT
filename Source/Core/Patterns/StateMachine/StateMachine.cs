@@ -1,4 +1,4 @@
-public class StateMachine
+public class StateMachine<TMarker>
 {
     public int CurrentStateIndex { get; private set; }
     public State CurrentState => _states[CurrentStateIndex];
@@ -25,7 +25,7 @@ public class StateMachine
         CurrentStateIndex = default;
     }
 
-    public void SetState<TMarker, TEntity>()
+    public void SetState<TEntity>()
     {
         _states[CurrentStateIndex].Exit();
         CurrentStateIndex = TypeIdRegistry<TMarker>.For<TEntity>.Id;
