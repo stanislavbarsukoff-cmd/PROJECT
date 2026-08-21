@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://iqp844x22xld"]
 
 [ext_resource type="Script" uid="uid://im3ut2gry5mn" path="res://Components/CharacterController/CharacterController.cs" id="1_41wu2"]
+[ext_resource type="Script" uid="uid://bwjjtw16mruh1" path="res://Components/FirstPersonCamera/FirstPersonCamera.cs" id="2_1iada"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eim23"]
 
@@ -20,5 +21,8 @@ mesh = SubResource("CapsuleMesh_eim23")
 script = ExtResource("1_41wu2")
 _body = NodePath("..")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1956636855]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1956636855 node_paths=PackedStringArray("_body")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_1iada")
+Sensitivity = 1.0
+_body = NodePath("..")
