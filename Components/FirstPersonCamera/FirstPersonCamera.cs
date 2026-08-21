@@ -14,4 +14,8 @@ public partial class FirstPersonCamera : Camera3D {
         _stateMachine.SetState<FirstPersonCameraLookState>();
     }
 
+    public override void _Process(double delta) {
+        _stateMachine.CurrentState.Process();
+    }
+
 }
