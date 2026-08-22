@@ -1,6 +1,6 @@
 using Godot;
 
-public interface IInputContext {
+public interface IInputHandler {
     public void HandleInput(InputEvent @event);
 }
 
