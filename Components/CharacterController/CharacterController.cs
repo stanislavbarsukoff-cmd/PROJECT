@@ -11,5 +11,5 @@ public partial class CharacterController : Node {
 	public override void _Process(double delta) {
 		_stateMachine.CurrentState.Process();
 	}
-	
+
 }
