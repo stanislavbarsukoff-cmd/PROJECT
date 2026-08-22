@@ -2,7 +2,7 @@ using Godot;
 
 public partial class InputRouter : Node {
     private IInputHandler[] _handlers;
-    public int CurrentIndex { get; private set; }
+    public int CurrentHandlerIndex { get; private set; }
     public IInputHandler CurrentHandler { get; private set; }
 
     public override void _Ready() {
@@ -21,11 +21,10 @@ public partial class InputRouter : Node {
     }
 
     public void ChangeContextAt(int index) {
-        if (_handlers.TryOrGet(index)) {
-            return;
+        if (_handlers.TryGetValue(index, out var handler)) {
+            CurrentHandler = handler;
+            CurrentHandlerIndex = index;
         }
-        CurrentIndex = index;
-        CurrentHandler = _handlers[index];
     }
 
 }
