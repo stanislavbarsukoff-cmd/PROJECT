@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://im3ut2gry5mn" path="res://Components/CharacterController/CharacterController.cs" id="1_41wu2"]
 [ext_resource type="Script" uid="uid://bwjjtw16mruh1" path="res://Components/FirstPersonCamera/FirstPersonCamera.cs" id="2_1iada"]
+[ext_resource type="Script" uid="uid://bf4gfp8y0r8bh" path="res://Features/Player/PlayerRootComposition.cs" id="3_0gd87"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eim23"]
 
@@ -11,20 +12,21 @@ rings = 3
 
 [node name="Player" type="CharacterBody3D" unique_id=992953594]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=824401248]
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=824401248]
 shape = SubResource("CapsuleShape3D_eim23")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=766089546]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=766089546]
 mesh = SubResource("CapsuleMesh_eim23")
 
 [node name="CharacterController" type="Node" parent="." unique_id=1945813550 node_paths=PackedStringArray("_body")]
 script = ExtResource("1_41wu2")
 _body = NodePath("..")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1956636855 node_paths=PackedStringArray("_body")]
+[node name="Camera" type="Camera3D" parent="." unique_id=1956636855 node_paths=PackedStringArray("_body")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("2_1iada")
 Sensitivity = 1.0
 _body = NodePath("..")
 
 [node name="PlayerRootComposition" type="Node" parent="." unique_id=2096381259]
+script = ExtResource("3_0gd87")
