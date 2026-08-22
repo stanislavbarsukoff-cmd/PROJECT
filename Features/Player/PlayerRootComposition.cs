@@ -13,6 +13,6 @@ public partial class PlayerRootComposition : Node {
 
         var playerIdleState = new CharacterStateIdle(_controller, characterBody);
 
-        _controller.initi
+        _controller.
     }
 }
