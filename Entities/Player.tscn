@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://im3ut2gry5mn" path="res://Components/CharacterController/CharacterController.cs" id="1_41wu2"]
 [ext_resource type="Script" uid="uid://bwjjtw16mruh1" path="res://Components/FirstPersonCamera/FirstPersonCamera.cs" id="2_1iada"]
-[ext_resource type="Script" uid="uid://lpsq78kt2eyq" path="res://Source/Godot/Systems/InputSystem/InputRouter.cs" id="3_0gd87"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_eim23"]
 
@@ -29,6 +28,3 @@ Sensitivity = 1.0
 _body = NodePath("..")
 
 [node name="PlayerRootComposition" type="Node" parent="." unique_id=2096381259]
-
-[node name="InputHandler" type="Node" parent="." unique_id=105570698]
-script = ExtResource("3_0gd87")
