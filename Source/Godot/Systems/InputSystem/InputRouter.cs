@@ -22,9 +22,9 @@ public partial class InputRouter : Node {
 
     public void ChangeContextAt(int index) {
 
-#if DEBUG
-        if (_handlers.TryOrGet(index, out var handler)) {
-
+        #if DEBUG
+        if (_handlers.Try(index) is false) {
+            return;
         }
 #endif
 
