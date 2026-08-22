@@ -14,6 +14,10 @@ config/name="PROJECT"
 run/main_scene="uid://c4y3ddnq5eona"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
 
+[autoload]
+
+InputManager="*uid://lpsq78kt2eyq"
+
 [display]
 
 window/stretch/mode="canvas_items"
