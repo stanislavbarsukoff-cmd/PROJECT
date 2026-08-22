@@ -8,6 +8,22 @@ public partial class PlayerRootComposition : Node {
 
 
     public override void _Ready() {
+        var characterBody = _controller.Body;
+
+
+
+        var playerIdleState = new CharacterStateIdle(_controller, );
+
+
+
+
+
         var gameActions = new DefaultActionHandler();
+
+
+
+
+
+
     }
 }

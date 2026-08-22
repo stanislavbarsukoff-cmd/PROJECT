@@ -1,7 +1,7 @@
 using Godot;
 
 public partial class CharacterController : Node {
-	[Export] private CharacterBody3D _body;
+	[Export] public CharacterBody3D Body { get; private set; }
 	private StateMachine<ICharacterMoveStateMachine> _stateMachine;
 
 	public override void _Ready() {
