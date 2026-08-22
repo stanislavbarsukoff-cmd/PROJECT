@@ -7,4 +7,7 @@ public static class ArrayExtensions {
         value = default;
         return false;
     }
+
+    public static bool Try<T>(this T[] array, int index)
+        => index >= 0 && index < array.Length && array[index] is not null;
 }
