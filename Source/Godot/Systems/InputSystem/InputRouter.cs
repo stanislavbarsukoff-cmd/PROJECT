@@ -1,23 +1,17 @@
 using Godot;
 
 public partial class InputRouter : Node {
-    private IInputHandler[] _handlers;
+    private IActionHandler[] _handlers;
     public int CurrentHandlerIndex { get; private set; }
-    public IInputHandler CurrentHandler { get; private set; }
-
-    public override void _Ready() {
-        Initialize([
-
-        ]);
-    }
+    public IActionHandler CurrentHandler { get; private set; }
 
     public override void _UnhandledInput(InputEvent @event) {
         CurrentHandler.HandleInput(@event);
     }
 
-    private void Initialize(IInputHandler[] handlers, int startIndex = 0) {
+    private void Initialize(IActionHandler[] handlers, int index = 0) {
         _handlers = handlers;
-        ChangeContextAt(startIndex);
+        ChangeContextAt(index);
     }
 
     public void ChangeContextAt(int index) {
