@@ -23,10 +23,12 @@ public partial class InputRouter : Node {
     public void ChangeContextAt(int index) {
 
 #if DEBUG
-        if (index)
+        if () {
 
+        }
+#endif
 
-            CurrentIndex = index;
+        CurrentIndex = index;
         CurrentHandler = _handlers[index];
     }
 
