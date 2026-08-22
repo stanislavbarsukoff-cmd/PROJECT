@@ -1,6 +1,5 @@
 using Godot;
 using System;
 
-public partial class InputContext : Node
-{
+public partial class InputContext : Node {
 }
