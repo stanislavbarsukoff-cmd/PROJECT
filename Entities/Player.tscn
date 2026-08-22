@@ -28,5 +28,7 @@ script = ExtResource("2_1iada")
 Sensitivity = 1.0
 _body = NodePath("..")
 
-[node name="Node" type="Node" parent="Camera3D" unique_id=105570698]
+[node name="PlayerRootComposition" type="Node" parent="." unique_id=2096381259]
+
+[node name="InputHandler" type="Node" parent="." unique_id=105570698]
 script = ExtResource("3_0gd87")
