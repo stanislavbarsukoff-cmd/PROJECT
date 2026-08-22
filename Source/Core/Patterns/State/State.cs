@@ -1,6 +1,4 @@
-using Godot;
-using System;
-
-public partial class State : Node
-{
+public abstract class State : IState {
+    public virtual void Enter() { }
+    public virtual void Exit() { }
 }
