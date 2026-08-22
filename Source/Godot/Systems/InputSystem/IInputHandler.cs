@@ -1,23 +1,7 @@
 using Godot;
-using System;
 
 public interface IInputContext {
     public void HandleInput(InputEvent @event);
-}
-
-public class GameContext : IInputContext {
-
-
-    public event Action<Vector2> OnMousePositionChanged;
-
-    public void HandleInput(InputEvent @event) {
-
-    }
-
-}
-
-public enum InputContextEnum {
-    Game = 0
 }
 
 
