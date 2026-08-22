@@ -11,19 +11,8 @@ public partial class PlayerRootComposition : Node {
         var characterBody = _controller.Body;
 
 
+        var playerIdleState = new CharacterStateIdle(_controller, characterBody);
 
-        var playerIdleState = new CharacterStateIdle(_controller, );
-
-
-
-
-
-        var gameActions = new DefaultActionHandler();
-
-
-
-
-
-
+        _controller.initi
     }
 }
