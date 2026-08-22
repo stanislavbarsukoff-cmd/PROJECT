@@ -3,8 +3,7 @@ using System;
 
 public partial class FirstPersonCameraLookState(
     FirstPersonCamera camera, CharacterBody3D body)
-    : FirstPersonCameraState<FirstPersonCameraLookState>(camera, body)
-{
+    : FirstPersonCameraState<FirstPersonCameraLookState>(camera, body) {
 
     private float _xRotation;
     private float _yRotation;
@@ -12,14 +11,12 @@ public partial class FirstPersonCameraLookState(
     private float _xTargetRotation;
     private float _yTargetRotation;
 
-    public override void Enter()
-    {
+    public override void Enter() {
         GD.Print("c1");
         base.Enter();
     }
 
-    public override void Process()
-    {
+    public override void Process() {
         //Vector3 mouseInput = Input.GetAxis("", "", "", "");
     }
 }
