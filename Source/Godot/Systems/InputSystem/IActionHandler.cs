@@ -1,5 +1,5 @@
 using Godot;
 
-public interface IInputHandler {
+public interface IActionHandler {
     public void HandleInput(InputEvent @event);
 }
