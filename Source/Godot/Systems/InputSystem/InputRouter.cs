@@ -1,9 +1,9 @@
 using Godot;
-
 public partial class InputRouter : Node {
     private IActionHandler[] _handlers;
     public int CurrentHandlerIndex { get; private set; }
     public IActionHandler CurrentHandler { get; private set; }
+        = new DefaultActionHandler();
 
     public override void _UnhandledInput(InputEvent @event) {
         CurrentHandler.HandleInput(@event);
