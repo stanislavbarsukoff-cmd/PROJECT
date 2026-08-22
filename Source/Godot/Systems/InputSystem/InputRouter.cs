@@ -5,6 +5,13 @@ public partial class InputRouter : SingletonNode<InputRouter> {
     public IActionHandler CurrentHandler { get; private set; }
         = new DefaultActionHandler();
 
+    public void ChangeContextAt(int index) {
+        if (_handlers.TryGetValue(index, out var handler)) {
+            CurrentHandler = handler;
+            CurrentHandlerIndex = index;
+        }
+    }
+
     public override void _UnhandledInput(InputEvent @event) {
         CurrentHandler.HandleInput(@event);
     }
@@ -12,13 +19,6 @@ public partial class InputRouter : SingletonNode<InputRouter> {
     private void Initialize(IActionHandler[] handlers, int index = 0) {
         _handlers = handlers;
         ChangeContextAt(index);
-    }
-
-    public void ChangeContextAt(int index) {
-        if (_handlers.TryGetValue(index, out var handler)) {
-            CurrentHandler = handler;
-            CurrentHandlerIndex = index;
-        }
     }
 
 }
