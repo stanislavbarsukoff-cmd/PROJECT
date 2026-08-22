@@ -1,6 +1,4 @@
-using Godot;
-using System;
-
-public partial class IState : Node
-{
+public interface IState {
+    public void Enter();
+    public void Exit();
 }
