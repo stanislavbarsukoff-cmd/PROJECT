@@ -1,5 +1,5 @@
 using Godot;
-public partial class InputRouter : Node {
+public partial class InputRouter : SingletonNode<InputRouter> {
     private IActionHandler[] _handlers;
     public int CurrentHandlerIndex { get; private set; }
     public IActionHandler CurrentHandler { get; private set; }
