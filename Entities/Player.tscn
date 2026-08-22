@@ -28,5 +28,6 @@ script = ExtResource("2_1iada")
 Sensitivity = 1.0
 _body = NodePath("..")
 
-[node name="PlayerRootComposition" type="Node" parent="." unique_id=2096381259]
+[node name="PlayerRootComposition" type="Node" parent="." unique_id=2096381259 node_paths=PackedStringArray("_controller")]
 script = ExtResource("3_0gd87")
+_controller = NodePath("../CharacterController")
