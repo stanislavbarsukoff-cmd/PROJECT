@@ -1,6 +1,6 @@
 using Godot;
-using System;
+public class DefaultActionHandler : IActionHandler {
+    public void HandleInput(InputEvent @event) {
 
-public partial class DefaultActionHandler : Node
-{
+    }
 }
