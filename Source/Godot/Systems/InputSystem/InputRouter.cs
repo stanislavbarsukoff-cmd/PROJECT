@@ -21,13 +21,9 @@ public partial class InputRouter : Node {
     }
 
     public void ChangeContextAt(int index) {
-
-#if DEBUG
-        if (_handlers.Try(index) is false) {
+        if (_handlers.TryOrGet(index)) {
             return;
         }
-#endif
-
         CurrentIndex = index;
         CurrentHandler = _handlers[index];
     }
