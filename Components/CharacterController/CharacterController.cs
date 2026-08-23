@@ -1,5 +1,10 @@
 using Godot;
 
-public partial class CharacterController : StateContext<> {
-	
+
+public enum MoveState {
+
+}
+
+public partial class CharacterController : StateContext<MoveState, > {
+
 }
