@@ -1,6 +1,6 @@
-using Godot;
-using System;
 
-public partial class MoveState : Node
-{
+namespace Kontur.Components.Character;
+
+public enum MoveState {
+    Idle
 }
