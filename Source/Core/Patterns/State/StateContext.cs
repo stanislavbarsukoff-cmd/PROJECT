@@ -10,7 +10,6 @@ public partial class StateContext<TEnum, TState> : Node
     private TState[] _states;
 
     public void Initialize(TState[] states, int index = 0) {
-        
         _states = states;
         ChangeStateAt(index);
     }
