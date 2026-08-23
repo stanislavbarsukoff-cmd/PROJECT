@@ -1,9 +1,6 @@
 using Godot;
 
-
-public enum MoveState {
-	idle = 0
-}
+namespace Kontur.Components.Character;
 
 public partial class CharacterController : StateContext<MoveState, CharacterState> {
 	[Export] public CharacterBody3D Body { get; private set; }
