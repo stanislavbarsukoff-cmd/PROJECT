@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+using Kontur.Components.Character;
+using Kontur.Components.Character.States;
+
 public partial class PlayerRootComposition : Node {
     [Export] private CharacterController _controller;
 
@@ -11,8 +14,10 @@ public partial class PlayerRootComposition : Node {
         var characterBody = _controller.Body;
 
 
-        var playerIdleState = new CharacterStateIdle(_controller, characterBody);
+        var idleState = new IdleState(_controller, characterBody);
 
-        _controller.
+        _controller.Initialize([
+            idleState
+        ]);
     }
 }
