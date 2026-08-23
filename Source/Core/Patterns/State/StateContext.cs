@@ -21,7 +21,7 @@ public partial class StateContext<TState, TEnum> : Node
         return false;
     }
     public void ChangeState(TEnum nextState) {
-        int index = Unsafe.BitCast<TEnum, byte>(nextState);
+        int index = Unsafe.BitCast<TEnum, int>(nextState);
         if (ChangeStateAt(index)) {
             CurrentStateType = nextState;
         }
