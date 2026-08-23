@@ -1,16 +1,17 @@
 using Godot;
 using System;
 using System.Runtime.CompilerServices;
-public partial class StateContext<TState, TEnum> : Node
-    where TState : class, IState
-    where TEnum : struct, Enum {
-    private TState[] _states;
-    public TState CurrentState { get; private set; }
+public partial class StateContext<TEnum, TState> : Node
+    where TEnum : struct, Enum
+    where TState : class, IState {
     public TEnum CurrentStateType { get; private set; }
+    public TState CurrentState { get; private set; }
 
-    public void Initialize(TState[] states, int startIndex = 0) {
+    private TState[] _states;
+
+    public void Initialize(TState[] states, int index = 0) {
         _states = states;
-        ChangeStateAt(startIndex);
+        ChangeStateAt(index);
     }
     public bool ChangeStateAt(int index) {
         if (_states.TryGetValue(index, out var state)) {
