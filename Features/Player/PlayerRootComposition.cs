@@ -11,7 +11,7 @@ public partial class PlayerRootComposition : Node {
 
 
 	public override void _Ready() {
-		GD.Print(_input + "");
+		GD.Print(_input + "input");
 		var inputContext = new PlayerInputContext();
 		_input.Initialize([
 			inputContext
