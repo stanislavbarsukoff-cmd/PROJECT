@@ -2,8 +2,7 @@ using Godot;
 
 namespace Kontur.Components.Character.States;
 
-public class IdleState(
-    CharacterController controller, CharacterBody3D body)
+public class IdleState(CharacterController controller, CharacterBody3D body)
     : CharacterState(controller, body, CharacterStateType.Idle) {
 
     private const float Friction = 20.0f;
