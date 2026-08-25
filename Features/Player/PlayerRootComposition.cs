@@ -6,11 +6,11 @@ using Kontur.Components.Character.States;
 
 public partial class PlayerRootComposition : Node {
 	[Export] private CharacterController _controller;
-
-	private InputRouter _input = InputRouter.Instance;
+	private InputRouter _input;
 
 
 	public override void _Ready() {
+		_input = InputRouter.Instance;
 		    if (_controller == null) {
         GD.Print("КРИТИЧЕСКАЯ ОШИБКА: _controller не привязан в инспекторе Godot!");
     }
