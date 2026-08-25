@@ -21,7 +21,8 @@ public partial class PlayerRootComposition : Node {
 		var sprintState = new SprintState(_controller);
 		_controller.Initialize([
 			idleState,
-			walkState
+			walkState,
+			sprintState
 		]);
 	}
 }
