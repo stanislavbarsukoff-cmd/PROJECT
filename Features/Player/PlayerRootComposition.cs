@@ -15,11 +15,12 @@ public partial class PlayerRootComposition : Node {
 		_input.Initialize([
 			inputContext
 		]);
-		GD.Print(_controller + "controller");
 		_controller.InputContext = inputContext;
 		var idleState = new IdleState(_controller);
+		var walkState = new WalkState(_controller);
 		_controller.Initialize([
-			idleState
+			idleState,
+			walkState
 		]);
 	}
 }
