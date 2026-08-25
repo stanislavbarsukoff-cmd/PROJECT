@@ -11,10 +11,12 @@ public partial class PlayerRootComposition : Node {
 
 
     public override void _Ready() {
+        GD.Print(_input);
         var inputContext = new PlayerInputContext();
         _input.Initialize([
             inputContext
         ]);
+        GD.Print(_c);
         _controller.InputContext = inputContext;
         var idleState = new IdleState(_controller);
         _controller.Initialize([
