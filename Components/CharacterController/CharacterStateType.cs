@@ -2,5 +2,7 @@
 namespace Kontur.Components.Character;
 
 public enum CharacterStateType {
-    Idle
+    Idle,
+    Walk,
+    Run
 }
