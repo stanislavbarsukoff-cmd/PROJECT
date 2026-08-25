@@ -11,6 +11,12 @@ public partial class PlayerRootComposition : Node {
 
 
     public override void _Ready() {
+        var inputContext = new PlayerInputContext();
+        _input.
+
+
+
+
         var characterBody = _controller.Body;
 
 

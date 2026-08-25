@@ -16,7 +16,7 @@ public partial class InputRouter : SingletonNode<InputRouter> {
         CurrentHandler.HandleInput(@event);
     }
 
-    private void Initialize(IActionHandler[] handlers, int index = 0) {
+    public void Initialize(IActionHandler[] handlers, int index = 0) {
         _handlers = handlers;
         ChangeContextAt(index);
     }
