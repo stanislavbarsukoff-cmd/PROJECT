@@ -5,7 +5,7 @@
 [node name="Node3D" type="Node3D" unique_id=1608955181]
 
 [node name="Player" parent="." unique_id=992953594 instance=ExtResource("1_mncer")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473929, 0)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=691626391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
