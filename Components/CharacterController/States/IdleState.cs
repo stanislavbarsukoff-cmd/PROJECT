@@ -6,18 +6,16 @@ public class IdleState(CharacterController controller)
     : CharacterState(controller, CharacterStateType.Idle) {
 
     private const float Friction = 20.0f;
+    private readonly Vector3 _gravity = controller.Body.GetGravity();
+
     public override void OnPhysicsProcess(double delta) {
+    if (!Body.IsOnFloor()) {
         float deltaTime = (float)delta;
         Vector3 velocity = Body.Velocity;
-        if(!Body.IsOnFloor()) {
-            velocity += Body.GetGravity() * deltaTime;
-        }
-        else {
-            float step = deltaTime * Friction;
-            velocity.X = Mathf.MoveToward(velocity.X, default, step);
-            velocity.Z = Mathf.MoveToward(velocity.Z, default, step);
-        }
+        velocity += _gravity * deltaTime;
         Body.Velocity = velocity;
         Body.MoveAndSlide();
+    }
+
     }
 }
