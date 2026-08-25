@@ -1,8 +1,9 @@
 using Godot;
+using Kontur.Components.Character;
 using System;
 
-public partial class SprintState : Node
-{
+public partial class SprintState(CharacterController controller)
+	: CharacterState(controller, CharacterStateType.){
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
