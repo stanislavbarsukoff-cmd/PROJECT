@@ -11,12 +11,12 @@ public partial class PlayerRootComposition : Node {
 
 
 	public override void _Ready() {
-		    if (_controller == null) {
-        GD.PrintErr("КРИТИЧЕСКАЯ ОШИБКА: _controller не привязан в инспекторе Godot!");
-    }
-    if (_input == null) {
-        GD.PrintErr("КРИТИЧЕСКАЯ ОШИБКА: InputRouter.Instance вернул null!");
-    }
+			if (_controller == null) {
+		GD.PrintErr("КРИТИЧЕСКАЯ ОШИБКА: _controller не привязан в инспекторе Godot!");
+	}
+	if (_input == null) {
+		GD.PrintErr("КРИТИЧЕСКАЯ ОШИБКА: InputRouter.Instance вернул null!");
+	}
 		var inputContext = new PlayerInputContext();
 		_input.Initialize([
 			inputContext
