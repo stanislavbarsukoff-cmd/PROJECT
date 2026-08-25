@@ -15,12 +15,9 @@ public partial class PlayerRootComposition : Node {
         _input.Initialize([
             inputContext
         ]);
-
+        _controller.InputContext = inputContext;
         var body = _controller.Body;
-
-
         var idleState = new IdleState(_controller, body);
-
         _controller.Initialize([
             idleState
         ]);
