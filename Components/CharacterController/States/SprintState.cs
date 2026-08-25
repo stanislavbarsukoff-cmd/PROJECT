@@ -3,14 +3,17 @@ using Kontur.Components.Character;
 using System;
 
 public partial class SprintState(CharacterController controller)
-	: CharacterState(controller, CharacterStateType.){
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
-
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
+	: CharacterState(controller, CharacterStateType.Sprint) {
+	private const float SprintSpeed = 10f;
+    public override void OnPhysicsProcess(double delta) {
+        if (!Context.InputContext.HasMovementInput) {
+            Context.ChangeState(CharacterStateType.Idle);
+            return;
+        }
+        if (!Context.InputContext.IsSprinting) {
+            Context.ChangeState(CharacterStateType.Walk);
+            return;
+        }
+		MoveWithSpeed(SprintSpeed, delta);
+    }
 }
