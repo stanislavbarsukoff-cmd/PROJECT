@@ -5,6 +5,13 @@ public partial class InputRouter : SingletonNode<InputRouter> {
     public IActionHandler CurrentHandler { get; private set; }
         = new DefaultActionHandler();
 
+    public override void _PhysicsProcess(double delta) {
+        CurrentHandler.OnPhysicsProcess();
+    }
+    public override void _UnhandledInput(InputEvent @event) {
+        CurrentHandler.HandleInput(@event);
+    }
+
     public void ChangeContextAt(int index) {
         if (_handlers.TryGetValue(index, out var handler)) {
             CurrentHandler = handler;
@@ -12,9 +19,7 @@ public partial class InputRouter : SingletonNode<InputRouter> {
         }
     }
 
-    public override void _UnhandledInput(InputEvent @event) {
-        CurrentHandler.HandleInput(@event);
-    }
+
 
     public void Initialize(IActionHandler[] handlers, int index = 0) {
         _handlers = handlers;
