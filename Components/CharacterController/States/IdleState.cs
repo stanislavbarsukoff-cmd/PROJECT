@@ -9,9 +9,8 @@ public class IdleState(CharacterController controller)
     public override void OnPhysicsProcess(double delta) {
         if (Context.InputContext.HasMovementInput) {
             Context.ChangeState(CharacterStateType.Walk);
-            
+            return;
         }
-
         if (!Body.IsOnFloor()) {
             float deltaTime = (float)delta;
             Vector3 velocity = Body.Velocity;
