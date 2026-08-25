@@ -12,15 +12,14 @@ public partial class PlayerRootComposition : Node {
 
     public override void _Ready() {
         var inputContext = new PlayerInputContext();
-        _input.
+        _input.Initialize([
+            inputContext
+        ]);
+
+        var body = _controller.Body;
 
 
-
-
-        var characterBody = _controller.Body;
-
-
-        var idleState = new IdleState(_controller, characterBody);
+        var idleState = new IdleState(_controller, body);
 
         _controller.Initialize([
             idleState
