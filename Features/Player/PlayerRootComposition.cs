@@ -18,6 +18,7 @@ public partial class PlayerRootComposition : Node {
 		_controller.InputContext = inputContext;
 		var idleState = new IdleState(_controller);
 		var walkState = new WalkState(_controller);
+		var sprintState = new SprintState(_controller);
 		_controller.Initialize([
 			idleState,
 			walkState
