@@ -1,4 +1,4 @@
 using Godot;
-public partial class FirstPersonCamera : Camera3D {
+public partial class Camera : Camera3D {
 
 }
