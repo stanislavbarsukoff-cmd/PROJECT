@@ -10,6 +10,6 @@ public class WalkState(CharacterController controller)
             Context.ChangeState(CharacterStateType.Idle);
             return;
         }
-
+        MoveWithSpeed(Speed, delta);
     }
 }
