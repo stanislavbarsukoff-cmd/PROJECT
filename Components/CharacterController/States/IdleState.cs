@@ -4,8 +4,6 @@ namespace Kontur.Components.Character.States;
 
 public class IdleState(CharacterController controller)
     : CharacterState(controller, CharacterStateType.Idle) {
-
-    private const float Friction = 20.0f;
     private readonly Vector3 _gravity = controller.Body.GetGravity();
 
     public override void OnPhysicsProcess(double delta) {
