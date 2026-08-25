@@ -7,6 +7,11 @@ public class IdleState(CharacterController controller)
     private readonly Vector3 _gravity = controller.Body.GetGravity();
 
     public override void OnPhysicsProcess(double delta) {
+        if (Context.InputContext.HasMovementInput) {
+            Context.ChangeState(CharacterStateType.Walk);
+            
+        }
+
         if (!Body.IsOnFloor()) {
             float deltaTime = (float)delta;
             Vector3 velocity = Body.Velocity;
