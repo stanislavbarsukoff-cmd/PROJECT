@@ -11,8 +11,6 @@ public partial class PlayerInputContext : IActionHandler {
 
 
     public void HandleInput(InputEvent @event) {
-        //13123
-        GD.Print(1);
     }
 
     public void OnPhysicsProcess() {
