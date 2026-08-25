@@ -1,6 +1,6 @@
 using Godot;
-using System;
 
+namespace Kontur.Components.Camera.States;
 public partial class IdleState : Node
 {
 }
