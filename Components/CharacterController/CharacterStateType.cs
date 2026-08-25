@@ -1,6 +1,6 @@
 
 namespace Kontur.Components.Character;
 
-public enum MoveState {
+public enum CharacterStateType {
     Idle
 }
