@@ -7,9 +7,8 @@ public class WalkState(CharacterController controller)
     public override void OnPhysicsProcess(double delta) {
         if (!Context.InputContext.HasMovementInput) {
             Context.ChangeState(CharacterStateType.Idle);
-            return;
         }
-        if (Context.InputContext.IsSprinting) {
+        else if (Context.InputContext.IsSprinting) {
             Context.ChangeState(CharacterStateType.Sprint);
             return;
         }
