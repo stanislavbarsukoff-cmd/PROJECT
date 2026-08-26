@@ -17,13 +17,15 @@ public abstract class CharacterState(
         Vector3 velocity = Body.Velocity;
         Vector2 inputDir = Context.InputContext.MovementVector;
         
-        // Исправление: инвертируем inputDir.Y, так как в Godot направление Вперед — это -Z
-        Vector3 direction = (Body.Transform.Basis * new Vector3(inputDir.X, 0, -inputDir.Y)).Normalized();
+        // Возвращаем ваш исходный рабочий вектор направления
+        Vector3 direction = (Body.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
         
+        // Если ввода нет, targetSpeed для расчета торможения должен быть равен 0
+        float currentTargetSpeed = Context.InputContext.HasMovementInput ? targetSpeed : 0f;
         float step = deltaTime * (Context.InputContext.HasMovementInput ? Acceleration : Deceleration);
         
-        velocity.X = Mathf.MoveToward(velocity.X, direction.X * targetSpeed, step);
-        velocity.Z = Mathf.MoveToward(velocity.Z, direction.Z * targetSpeed, step);
+        velocity.X = Mathf.MoveToward(velocity.X, direction.X * currentTargetSpeed, step);
+        velocity.Z = Mathf.MoveToward(velocity.Z, direction.Z * currentTargetSpeed, step);
         
         Body.Velocity = velocity;
         Body.MoveAndSlide();
