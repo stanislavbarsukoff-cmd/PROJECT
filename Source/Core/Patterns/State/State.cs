@@ -2,8 +2,14 @@ using System;
 
 public abstract class State<TContext, TEnum>(TContext context, TEnum type) : IState
     where TEnum : struct, Enum {
-    protected readonly TContext Context = context;
     public TEnum StateType { get; } = type;
-    public virtual void Enter() { }
-    public virtual void Exit() { }
+    public event Action Entered;
+    public event Action Exited;
+    protected readonly TContext Context = context;
+    public virtual void Enter() {
+        Entered?.Invoke();
+    }
+    public virtual void Exit() {
+        Exited?.Invoke();
+    }
 }
