@@ -5,21 +5,22 @@ namespace Kontur.Components.Character;
 public abstract class CharacterState(
     CharacterController controller, CharacterStateType type)
     : State<CharacterController, CharacterStateType>(controller, type) {
+    
     public CharacterBody3D Body { get; } = controller.Body;
+    
     public abstract void OnPhysicsProcess(double delta);
 
     protected const float Acceleration = 15.0f;
     protected const float Deceleration = 20.0f;
-
     private readonly Vector3 _gravity = controller.Body.GetGravity();
+
     protected void ApplyGravity(double delta) {
         if (!Body.IsOnFloor()) {
             Vector3 velocity = Body.Velocity;
-            velocity += _gravity * (float)delta;
+            velocity.Y += _gravity.Y * (float)delta;
             Body.Velocity = velocity;
         }
     }
-
     protected void MoveWithDirection(Vector3 direction, float targetSpeed, float currentAcceleration, double delta) {
         float deltaTime = (float)delta;
         Vector3 velocity = Body.Velocity;
