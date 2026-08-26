@@ -1,5 +1,4 @@
 using Godot;
-using System;
 namespace Kontur.Components.Character.States;
 
 public class WalkState(CharacterController controller)
