@@ -14,6 +14,10 @@ public partial class SprintState(CharacterController controller)
             Context.ChangeState(CharacterStateType.Walk);
             return;
         }
-		MoveWithSpeed(SprintSpeed, delta);
+        Vector2 inputDir = Context.InputContext.MovementVector;
+        Vector3 direction = (Body.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+        ApplyGravity(delta);
+        MoveWithDirection(direction, SprintSpeed, Acceleration, delta);
+        Body.MoveAndSlide();
     }
 }
