@@ -8,8 +8,8 @@ public abstract class CharacterState(
     public CharacterBody3D Body { get; } = controller.Body;
     public abstract void OnPhysicsProcess(double delta);
 
-    private const float Acceleration = 15.0f;
-    private const float Deceleration = 20.0f;
+    protected const float Acceleration = 15.0f;
+    protected const float Deceleration = 20.0f;
 
     private readonly Vector3 _gravity = controller.Body.GetGravity();
     protected void ApplyGravity(double delta) {

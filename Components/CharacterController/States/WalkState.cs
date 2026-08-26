@@ -10,6 +10,14 @@ public class WalkState(CharacterController controller)
             Context.ChangeState(CharacterStateType.Idle);
             return;
         }
-        MoveWithSpeed(Speed, delta);
+        if (Context.InputContext.IsSprinting) {
+            Context.ChangeState(CharacterStateType.Sprint);
+            return;
+        }
+        Vector2 inputDir = Context.InputContext.MovementVector;
+        Vector3 direction = (Body.Transform.Basis * new Vector3(inputDir.X, 0, inputDir.Y)).Normalized();
+        ApplyGravity(delta);
+        MoveWithDirection(direction, Speed, Acceleration, delta);
+        Body.MoveAndSlide();   
     }
 }
