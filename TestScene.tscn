@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c4y3ddnq5eona"]
 
 [ext_resource type="PackedScene" uid="uid://iqp844x22xld" path="res://Entities/Player.tscn" id="1_mncer"]
+[ext_resource type="PackedScene" uid="uid://bsvfui0nxt554" path="res://Shared/border-finish.fbx" id="2_wicfy"]
+[ext_resource type="Material" uid="uid://7r80b7lmitg7" path="res://Shared/new_orm_material_3d.tres" id="3_go42g"]
 
 [node name="Node3D" type="Node3D" unique_id=1608955181]
 
@@ -11,3 +13,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.473929, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 use_collision = true
 size = Vector3(40, 1, 40)
+
+[node name="border-finish" parent="." unique_id=1671293012 instance=ExtResource("2_wicfy")]
+transform = Transform3D(0.48231354, 0, -0.8759987, 0, 1, 0, 0.8759987, 0, 0.48231354, 3.6214194, 0.50160944, -5.25921)
+
+[node name="Cube" parent="border-finish" index="0" unique_id=692637377]
+material_override = ExtResource("3_go42g")
+
+[editable path="border-finish"]

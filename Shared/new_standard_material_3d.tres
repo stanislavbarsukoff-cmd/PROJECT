@@ -1,3 +1,9 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://53dpf4gat2u5"]
 
+[ext_resource type="Texture2D" uid="uid://ctch6nfb5arce" path="res://Shared/border-finish_base.png" id="1_0068y"]
+[ext_resource type="Texture2D" uid="uid://c34c3mhutnb7k" path="res://Shared/border-finish_nor.png" id="2_02mw5"]
+
 [resource]
+albedo_texture = ExtResource("1_0068y")
+normal_enabled = true
+normal_texture = ExtResource("2_02mw5")
